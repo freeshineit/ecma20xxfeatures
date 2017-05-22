@@ -9,15 +9,30 @@ Major new features:
 +   [Trailing commas in function parameter lists and calls](#lists-calls)
 
 
-  <span id = "Async-functions">Async functions</span>
+##  <span id = "Async-functions">Async functions</span>
 
- <span id = "Shared-memory-and-atomicsd">Shared memory and atomicsd</span>
+Async functions always return [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
- <span id = "entries-values">Object.entries() and Object.values()</span>
+```
+    async function asyncFunc() {
+        return 123;
+    }
 
- <span id = "padStart-padEnd">New string methods: padStart and padEnd</span>
+    asyncFunc()
+    .then(x => console.log(x));
+
+```
+![asyncFunc](./images/async.png)
 
 
-  <span id = "Object-getOwnPropertyDescriptors">Object.getOwnPropertyDescriptors()</span>
+##  <span id = "Shared-memory-and-atomicsd">Shared memory and atomicsd</span>
 
- <span id = "lists-calls">Trailing commas in function parameter lists and calls</span>
+
+##  <span id = "entries-values">Object.entries() and Object.values()</span>
+
+##  <span id = "padStart-padEnd">New string methods: padStart and padEnd</span>
+
+
+##  <span id = "Object-getOwnPropertyDescriptors">Object.getOwnPropertyDescriptors()</span>
+
+##  <span id = "lists-calls">Trailing commas in function parameter lists and calls</span>

@@ -19,15 +19,15 @@ An infix operator for exponentiation
 
 produces the same result as
 
-`Math.pow(x, y)`
+    `Math.pow(x, y)`
 
 Examples:
 ```
-let squared = 3 ** 2; // 9
+    let squared = 3 ** 2; // 9
 
-let num = 3;
-num **= 2;
-console.log(num); // 9
+    let num = 3;
+    num **= 2;
+    console.log(num); // 9
 
 ```
 
