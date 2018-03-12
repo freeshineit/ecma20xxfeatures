@@ -1,4 +1,4 @@
-# ECMAScript 2017
+## ECMAScript 2017
 
 Major new features:
 +   [Async functions](#Async-functions)
@@ -9,7 +9,7 @@ Major new features:
 +   [Trailing commas in function parameter lists and calls](#lists-calls)
 
 
-##  <span id = "Async-functions">Async functions</span>
+###  <span id = "Async-functions">Async functions</span>
 
 Async functions always return [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
@@ -25,14 +25,21 @@ Async functions always return [Promises](https://developer.mozilla.org/en-US/doc
 ![asyncFunc](./images/async.png)
 
 
-##  <span id = "Shared-memory-and-atomicsd">Shared memory and atomicsd</span>
+###  <span id = "Shared-memory-and-atomicsd">Shared memory and atomicsd</span>
 
 
-##  <span id = "entries-values">Object.entries() and Object.values()</span>
+### <span id = "entries-values">Object.entries() and Object.values()</span>
 
-##  <span id = "padStart-padEnd">New string methods: padStart and padEnd</span>
+### <span id = "padStart-padEnd">New string methods: padStart and padEnd</span>
 
 
-##  <span id = "Object-getOwnPropertyDescriptors">Object.getOwnPropertyDescriptors()</span>
+###  <span id = "Object-getOwnPropertyDescriptors">Object.getOwnPropertyDescriptors()</span>
 
-##  <span id = "lists-calls">Trailing commas in function parameter lists and calls</span>
+###  <span id = "lists-calls">Trailing commas in function parameter lists and calls</span>
+
+
+### 结束语
+
+资源：
+
+[ECMAScript® 2017 Language Specification (ECMA-262, 8th edition, June 2017)](http://www.ecma-international.org/ecma-262/8.0/index.html)

@@ -2,10 +2,15 @@
 
 ### Assignment Destructuring (分配解构)
 
-<!-- ```js
-    let 
+```js
+    let obj = {
+        id: 1,
+        name: 'shine'
+    }
 
-``` -->
+    let {name} = obj;
+
+```
 
 ### Spread Operator and Rest Parameters (扩展操作和其余的参数)
 
@@ -17,6 +22,8 @@
 
 ```js
     [1, 2].map(x =>  x * 2);
+
+    let func = () => console.log('this is arrow function');
 ```
 
 ### Template Literals (模版字符串)
@@ -56,6 +63,11 @@ class foo {}
 
 ### Let and Const
 
+```js
+    let a  = 'a';
+    const B = 'b';
+```
+
 ### Symbols (一种新的原始数据类型Symbol, 表示独一无二的值)
 
 ```js
@@ -65,12 +77,18 @@ var symbol = Symbol()
 ### Iterators (Iterator 遍历器)
 
 ```js
-    for (let el of document.querySelectorAll('a')) {
+    for (let el of document.querySelectorAll('img')) {
         // el
     }
 ```
 
 ### for..of
+
+```js
+    for (let el of document.querySelectorAll('img')) {
+        // el
+    }
+```
 
 ### Generators (Generator 函数是 ES6 提供的一种异步编程解决方案)
 
@@ -263,55 +281,94 @@ Number在ES6之前就已经存在了，ES6对其进行了扩展。
 
 Math在ES6之前就已经存在了，ES6对其进行了扩展。
 
-+   `Math.sign` – sign function of a number
++   `Math.sign`: 用于判断一个数是正数、负数还是零。 [Math.sign](http://www.ecma-international.org/ecma-262/6.0/#sec-math.sign)
 
-+   `Math.trunc`– integer part of a number
++   `Math.trunc`: 返回整数部分。 [Math.trunc](http://www.ecma-international.org/ecma-262/6.0/#sec-math.trunc)
 
-+   `Math.cbrt` – cubic root of value, or ∛‾value
++   `Math.cbrt`: 开立方根， ∛‾value。 [Math.cbrt](http://www.ecma-international.org/ecma-262/6.0/#sec-math.cbrt)
 
-+   `Math.expm1` – e to the value minus 1, or evalue - 1
++   `Math.expm1`: e<sup>x</sup> - 1。 [Math.expm1](http://www.ecma-international.org/ecma-262/6.0/#sec-math.expm1)
 
-+   `Math.log1p` – natural logarithm of value + 1, or ln(value + 1)
++   `Math.log1p`: 返回1 + x的自然对数。 [Math.log1p](http://www.ecma-international.org/ecma-262/6.0/#sec-math.log1p)
 
-+   `Math.log10` – base 10 logarithm of value, or log10(value)
++   `Math.log10`: 以10为底的对数的值。 [Math.log10](http://www.ecma-international.org/ecma-262/6.0/#sec-math.log10)
 
-+   `Math.log2` – base 2 logarithm of value, or log2(value)
++   `Math.log2`: 以2为底的对数的值。 [Math.log2](http://www.ecma-international.org/ecma-262/6.0/#sec-math.log2)
 
-+   `Math.sinh` – hyperbolic sine of a number
++   `Math.sinh`: 数的双曲正弦。 [Math.sinh](http://www.ecma-international.org/ecma-262/6.0/#sec-math.sinh)
 
-+   `Math.cosh` – hyperbolic cosine of a number
++   `Math.cosh`: 数的双曲余弦。 [Math.cosh](http://www.ecma-international.org/ecma-262/6.0/#sec-math.cosh)
 
-+   `Math.tanh` – hyperbolic tangent of a number
++   `Math.tanh`: 数的双曲正切。 [Math.tanh](http://www.ecma-international.org/ecma-262/6.0/#sec-math.tanh)
 
-+   `Math.asinh` – hyperbolic arc-sine of a number
++   `Math.asinh`: 数的逆双曲弧正弦。 [Math.asinh](http://www.ecma-international.org/ecma-262/6.0/#sec-math.asinh)
 
-+   `Math.acosh` – hyperbolic arc-cosine of a number
++   `Math.acosh`:  数的的逆双曲余弦。 [Math.acosh](http://www.ecma-international.org/ecma-262/6.0/#sec-math.acosh)
 
-+   `Math.atanh` – hyperbolic arc-tangent of a number
++   `Math.atanh`: 数的双曲正切。 [Math.atanh](http://www.ecma-international.org/ecma-262/6.0/#sec-math.atanh)
 
-+   `Math.hypot` – square root of the sum of squares
++   `Math.hypot`: 平方和的平方根。 [Math.hypot](http://www.ecma-international.org/ecma-262/6.0/#sec-math.hypot)
 
-+   `Math.clz32` – leading zero bits in the 32-bit representation of a number
++   `Math.clz32`: 在一个数字的32位表示中引导零位 [Math.clz32](http://www.ecma-international.org/ecma-262/6.0/#sec-math.clz32)
 
-+   `Math.imul`– C-like 32-bit multiplication
++   `Math.imul`: 返回两个数以 32 位带符号整数形式相乘的结果。 [Math.imul](http://www.ecma-international.org/ecma-262/6.0/#sec-math.imul)
 
-+   `Math.fround` – nearest single-precision float representation of a number
++   `Math.fround`:返回一个数的32位单精度浮点数形式。 [Math.fround](http://www.ecma-international.org/ecma-262/6.0/#sec-math.fround)
 
-[Nicolás Bevacqua](https://ponyfoo.com/articles/es6#math)
+[ECMAScript 6 入门 阮一峰](http://es6.ruanyifeng.com/#docs/number#Math-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95)
 
 ### Array
 
 数组扩展
 
++   `Array.from` – create Array instances from arraylike objects like arguments or iterables
+
++   `Array.of` – similar to new Array(...items), but without special cases
+
++   `Array.prototype.copyWithin` – copies a sequence of array elements into somewhere else in the array
+
++   `Array.prototype.fill` – fills all elements of an existing array with the provided value
+
++   `Array.prototype.find` – returns the first item to satisfy a callback
+
++   `Array.prototype.findIndex`– returns the index of the first item to satisfy a callback
+
++   `Array.prototype.keys` – returns an iterator that yields a sequence holding the keys for the array
+   
++   `Array.prototype.values` – returns an iterator that yields a sequence holding the values for the array
+
++   `Array.prototype.entries` – returns an iterator that yields a sequence holding key value pairs for the array
+
++   `Array.prototype[Symbol.iterator]` – exactly the same as the Array.prototype.values method
+
 ### Object
 
 对象扩张
+
++   `Object.assign` – recursive shallow overwrite for properties from `target`, `...objects`
+
++   `Object.is` – like using the === operator programmatically, except it’s true for NaN vs NaN and false for +0 vs -0
+
++   `Object.getOwnPropertySymbols` – returns all own property symbols found on an object
+
++   `Object.setPrototypeOf` – changes prototype. Equivalent to `Object.prototype.__proto__` setter
 
 
 ### Strings and Unicode （）
 
 字符串扩展和Unicode编码扩展
 
++   String Manipulation
+    +   String.prototype.startsWith – whether the string starts with value
+    +   String.prototype.endsWith – whether the string ends in value
+    +   String.prototype.includes – whether the string contains value anywhere
+    +   String.prototype.repeat – returns the string repeated amount times
+    +   String.prototype[Symbol.iterator] – lets you iterate over a sequence of unicode code points (not characters)
+
++   Unicode
+    +   String.prototype.codePointAt – base-10 numeric representation of a code point at a given position in string
+    +   String.fromCodePoint – given ...codepoints, returns a string made of their unicode representations
+    +   String.prototype.normalize – returns a normalized version of the string’s unicode representation
 
 
 ### Modules（模块）
@@ -342,3 +399,11 @@ Math在ES6之前就已经存在了，ES6对其进行了扩展。
 这只是一个简单的版本，适合刚入手ES6的新手，可以先大致过一遍ES6的新东西。具体的方面后期会慢慢补上，如果你喜欢请star🌟 谢谢
 
 [原文地址](https://github.com/freeshineit/ecma20xxfeatures/blob/master/src/ecma2015/)
+
+资源：
+
+[ECMAScript 6 入门 阮一峰](http://es6.ruanyifeng.com/#docs/reflect)
+
+[ES6 Overview in 350 Bullet Points](https://ponyfoo.com/articles/es6)
+
+[ECMAScript® 2015 Language Specification](http://www.ecma-international.org/ecma-262/6.0/)
