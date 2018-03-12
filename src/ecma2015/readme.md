@@ -354,7 +354,7 @@ Math在ES6之前就已经存在了，ES6对其进行了扩展。
 +   `Object.setPrototypeOf` – changes prototype. Equivalent to `Object.prototype.__proto__` setter
 
 
-### Strings and Unicode （）
+### Strings and Unicode
 
 字符串扩展和Unicode编码扩展
 
