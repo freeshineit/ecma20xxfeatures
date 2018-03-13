@@ -9,16 +9,19 @@
     }
 
     let {name} = obj;
-
 ```
 
 ### Spread Operator and Rest Parameters (扩展操作和其余的参数)
 
 ```js
-    let arr = [1, 2, ...[3, 4, 5], 6, 7]
+    let arr = [1, 2, ...[3, 4, 5], 6, 7];
+
+    function reset(a, b, ...params) {}
+
+    reset('a', 'b', 'c', 'd');
 ```
 
-### Arrow Functions (箭头函数)
+### Arrow Function (箭头函数)
 
 ```js
     [1, 2].map(x =>  x * 2);
@@ -55,7 +58,7 @@
     }
 ```
 
-### Classes (类)
+### Class (类)
 
 ```js
 class foo {}
@@ -68,13 +71,13 @@ class foo {}
     const B = 'b';
 ```
 
-### Symbols (一种新的原始数据类型Symbol, 表示独一无二的值)
+### Symbol (一种新的原始数据类型Symbol, 表示独一无二的值)
 
 ```js
 var symbol = Symbol()
 ```
 
-### Iterators (Iterator 遍历器)
+### Iterator (Iterator 遍历器)
 
 ```js
     for (let el of document.querySelectorAll('img')) {
@@ -107,10 +110,9 @@ var symbol = Symbol()
     helloo.next(); // {value: "!", done: false}
     helloo.next(); // {value: "ending", done: true}
     helloo.next(); // {value: "undefined", done: true}
-
 ```
 
-### Promises
+### Promise
 
 ```js
 let promise = new Promise( (resolve, reject) => {
@@ -138,10 +140,9 @@ promise.then((value) => {
 });
 ```
 
-### Maps
+### Map
 
 ```js
-
 let map = new Map()
 
 map.set('a', 'a');
@@ -166,16 +167,15 @@ console.log(...map) // ["a", "a"],["b", "b"],["c", "c"],["d", "d"]
 // has(key)
 // delete(key)
 // clear(key)
-
 ```
 
-### WeakMaps (和 Map相似，但不完全相同)
+### WeakMap (和 Map相似，但不完全相同)
 
 WeakMap 与 Map 在 API 上的区别主要是两个，一是没有遍历操作（即没有keys()、values()和entries()方法），也没有size属性。因为没有办法列出所有键名，某个键名是否存在完全不可预测，跟垃圾回收机制是否运行相关。这一刻可以取到键名，下一刻垃圾回收机制突然运行了，这个键名就没了，为了防止出现不确定性，就统一规定不能取到键名。二是无法清空，即不支持clear方法。因此，WeakMap只有四个方法可用：get()、set()、has()、delete()。
 
 [ECMAScript 6 入门 阮一峰](http://es6.ruanyifeng.com/#docs/set-map)
 
-### Sets
+### Set
 
 ```js
 let set = new Set();
@@ -197,7 +197,7 @@ let set = new Set();
     // set.forEach()
 ```
 
-### WeakSets
+### WeakSet
 
 ```js
     let weakSet = new WeakSet();
@@ -209,7 +209,7 @@ let set = new Set();
     // weakSet.has()
 ```
 
-### Proxies (代理)
+### Proxy (代理)
 
 ```js
 let proxy = new proxy(target, handler);
@@ -241,11 +241,10 @@ fproxy(1, 2) // 1
 new fproxy(1, 2) // {value: 2}
 fproxy.prototype === Object.prototype // true
 fproxy.foo === "Hello, foo" // true
-
 ```
 [ECMAScript 6 入门 阮一峰](http://es6.ruanyifeng.com/#docs/proxy)
 
-### Reflection (反射)
+### Reflect (反射)
 
 [ECMAScript 6 入门 阮一峰](http://es6.ruanyifeng.com/#docs/reflect)
 
@@ -321,57 +320,60 @@ Math在ES6之前就已经存在了，ES6对其进行了扩展。
 
 数组扩展
 
-+   `Array.from` – create Array instances from arraylike objects like arguments or iterables
++   `Array.from`: 把类似数组或可迭代的对象转化为数组实例。 [Array.from](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
-+   `Array.of` – similar to new Array(...items), but without special cases
++   `Array.of` : 方法创建一个具有可变数量参数的新数组实例，而不考虑参数的数量或类型。 [Array.of](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
 
-+   `Array.prototype.copyWithin` – copies a sequence of array elements into somewhere else in the array
++   `Array.prototype.copyWithin`: 将数组元素的序列复制到数组中的其他位置。 [Array.prototype.copyWithin](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)
 
-+   `Array.prototype.fill` – fills all elements of an existing array with the provided value
++   `Array.prototype.fill`:  用所提供的值填充现有满足开始和结束索引的数组的所有元素() 。 [Array.prototype.fill](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
 
-+   `Array.prototype.find` – returns the first item to satisfy a callback
-
-+   `Array.prototype.findIndex`– returns the index of the first item to satisfy a callback
-
-+   `Array.prototype.keys` – returns an iterator that yields a sequence holding the keys for the array
++   `Array.prototype.find`: 返回第一个满足回调函数的项 。 [Array.prototype.find](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
    
-+   `Array.prototype.values` – returns an iterator that yields a sequence holding the values for the array
++   `Array.prototype.findIndex`: 返回第一项以满足回调的索引 。 [Array.prototype.findIndex](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
-+   `Array.prototype.entries` – returns an iterator that yields a sequence holding key value pairs for the array
++   `Array.prototype.keys`: 返回一个新的Array迭代器，它包含数组中每个索引的键。 [Array.prototype.keys](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)
+   
++   `Array.prototype.values`: 返回一个新的Array迭代器，它包含数组中每个索引的值。 [Array.prototype.values](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/values)
 
-+   `Array.prototype[Symbol.iterator]` – exactly the same as the Array.prototype.values method
++   `Array.prototype.entries`: 返回一个新的Array迭代器，它包含数组中每个索引的键/值对。 [Array.prototype.entries](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
+
++   `Array.prototype[Symbol.iterator]`: 完全一样的array.prototype.values方法。 [Array.prototype[Symbol.iterator]`:](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
 
 ### Object
 
-对象扩张
+对象扩展
 
-+   `Object.assign` – recursive shallow overwrite for properties from `target`, `...objects`
++   `Object.assign`: 用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象 。 [Object.assign](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
-+   `Object.is` – like using the === operator programmatically, except it’s true for NaN vs NaN and false for +0 vs -0
++   `Object.is`: 判断两个值是否是相同的值 。 [Object.is](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/is)
 
-+   `Object.getOwnPropertySymbols` – returns all own property symbols found on an object
++   `Object.getOwnPropertySymbols` – 返回对象上发现的所有属性symbols 。 [Object.getOwnPropertySymbols](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols)
 
-+   `Object.setPrototypeOf` – changes prototype. Equivalent to `Object.prototype.__proto__` setter
++   `Object.setPrototypeOf`: 改变原型。相当于`Object.__proto__`设置。 [Object.setPrototypeOf](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf)
 
-
-### Strings and Unicode
+### String and Unicode
 
 字符串扩展和Unicode编码扩展
 
-+   String Manipulation
-    +   String.prototype.startsWith – whether the string starts with value
-    +   String.prototype.endsWith – whether the string ends in value
-    +   String.prototype.includes – whether the string contains value anywhere
-    +   String.prototype.repeat – returns the string repeated amount times
-    +   String.prototype[Symbol.iterator] – lets you iterate over a sequence of unicode code points (not characters)
++   字符串操作
+    +   `String.prototype.startsWith`: 字符串是否以指定的值开头。 [String.prototype.startsWith](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+
+    +   `String.prototype.endsWith`:  字符串是否以指定的值结束。[String.prototype.endsWith](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+
+    +   `String.prototype.includes`: 字符串是否包含值。[String.prototype.includes](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+
+    +   `String.prototype.repeat`: 返回字符串重复指定次数的新字符串。 [String.prototype.repeat](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+
+    +   `String.prototype[Symbol.iterator]`: 返回一个新的Iterator对象，它遍历字符串的代码点，返回每一个代码点的字符串值。[String.prototype[Symbol.iterator]](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/@@iterator)
 
 +   Unicode
-    +   String.prototype.codePointAt – base-10 numeric representation of a code point at a given position in string
-    +   String.fromCodePoint – given ...codepoints, returns a string made of their unicode representations
-    +   String.prototype.normalize – returns a normalized version of the string’s unicode representation
+    +   `String.prototype.codePointAt`: [   String.prototype.codePointAt](http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.codepointat)
+    +   `String.fromCodePoint`: [String.fromCodePoint](http://www.ecma-international.org/ecma-262/6.0/#sec-string.fromcodepoint)
+    +   `String.prototype.normalize`: [String.prototype.normalize](http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.normalize)
 
 
-### Modules（模块）
+### Module（模块）
 
 `a.js`
 ```js
@@ -406,4 +408,8 @@ Math在ES6之前就已经存在了，ES6对其进行了扩展。
 
 [ES6 Overview in 350 Bullet Points](https://ponyfoo.com/articles/es6)
 
+[MDN](https://developer.mozilla.org/)
+
 [ECMAScript® 2015 Language Specification](http://www.ecma-international.org/ecma-262/6.0/)
+
+
