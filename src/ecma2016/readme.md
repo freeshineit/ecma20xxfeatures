@@ -1,6 +1,6 @@
-## ECMA 2016 Features
+## ECMAScript 2016
 
-###    Array.prototype.includes
+### Array.prototype.includes
 
 `Array.prototype.includes(value : any) : boolean`
 
@@ -13,7 +13,7 @@ Examples:
     false
 ```
 
-###    Exponentiation operator (**)
+### Exponentiation operator (幂运算符)
 
 An infix operator for exponentiation
 
@@ -31,10 +31,11 @@ Examples:
 
 ```
 
-(If you're interested, try it in Chrome)
-
+(如果你想尝试，可以在最新的Chrome中尝试)
 
 ### 结束语
+
+如果你喜欢请star🌟 谢谢
 
 资源：
 

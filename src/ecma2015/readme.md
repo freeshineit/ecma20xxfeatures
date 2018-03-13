@@ -1,4 +1,4 @@
-## ES6 (ECMA2015)
+## ES6 (ECMAScript 2015)
 
 ### Assignment Destructuring (分配解构)
 

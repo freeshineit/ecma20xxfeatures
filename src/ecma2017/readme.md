@@ -27,7 +27,6 @@ Async functions always return [Promises](https://developer.mozilla.org/en-US/doc
 
 ###  <span id = "Shared-memory-and-atomicsd">Shared memory and atomicsd</span>
 
-
 ### <span id = "entries-values">Object.entries() and Object.values()</span>
 
 ### <span id = "padStart-padEnd">New string methods: padStart and padEnd</span>
