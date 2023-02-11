@@ -1,4 +1,4 @@
-# ecma20xxfeatures
+# ecma20xx features
 
 因为新的特性浏览器还没有完全实现兼容，如果你想尝试这些新特性，可以使用 babel 去进行转换。
 
